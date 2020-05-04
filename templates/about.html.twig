@@ -1,6 +1,15 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h4>Ceci est mon about qui vient du block about.html.twig</h4>
-
+    <h1>Page about</h1>
+    <ul>
+        {% for fruit in fruits %}
+            <li> {{ fruit.name }} : {{ fruit.price }} euros au kg</li>
+            {% if fruit.allergy is defined %}
+                {% for allergy in fruit.allergy %}
+                    {{ allergy }}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
 {% endblock %}

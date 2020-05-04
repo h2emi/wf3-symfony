@@ -14,7 +14,11 @@ class DefaultController extends AbstractController
 
     public function aboutAction()
     {
-        return $this->render('about.html.twig');
+        $fruits = [
+            ["name"=>"berry", "price"=>8, "allergy"=>['pollen', 'autre chose']],
+            ["name"=>"coconut", "price"=>12]
+        ];
+        return $this->render('about.html.twig', ["fruits"=>$fruits]);
     }
 
     public function nameAction($name)
