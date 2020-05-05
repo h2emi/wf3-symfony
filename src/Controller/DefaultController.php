@@ -3,13 +3,14 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\UserRepository;
 
 class DefaultController extends AbstractController
 {
-    public function indexAction()
+    public function indexAction(UserRepository $userRepository)
     {
-        $userName = 'Julien';
-        return $this->render('home.html.twig', ["name" => $userName]);
+        $users = $userRepository->findAll();
+        return $this->render('home.html.twig', ["users" => $users]);
     }
 
     public function aboutAction()
