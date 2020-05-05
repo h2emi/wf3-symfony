@@ -26,6 +26,11 @@ class User
      */
     private $age;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Job", inversedBy="users")
+     */
+    private $job;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class User
     public function setAge(int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getJob(): ?Job
+    {
+        return $this->job;
+    }
+
+    public function setJob(?Job $job): self
+    {
+        $this->job = $job;
 
         return $this;
     }

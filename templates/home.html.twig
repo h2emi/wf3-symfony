@@ -9,6 +9,7 @@
       <th scope="col">id</th>
       <th scope="col">Prénom</th>
       <th scope="col">Age</th>
+      <th scope="col">Métier</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,7 @@
             <td>{{ user.id }}</td>
             <td>{{ user.name }}</td>
             <td>{{ user.age }}</td>
+            <td>{{ user.job.name }}</td>
         </tr>
     {% endfor %}
   </tbody>
