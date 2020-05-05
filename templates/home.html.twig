@@ -3,11 +3,30 @@
 {% block body %}
 
 
-    <ul>
-        {% for user in users %}
-            <li>{{ user.name }} qui a : {{ user.age }} ans</li>
-        {% endfor %}
-    </ul>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    
+        
+            
+        
+   
 
 
 {% endblock %}
